@@ -1,0 +1,3 @@
+C:/Users/Meclotfi/Documents/GitHub/chess-boot-using-Minmax--Algorithm/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Meclotfi/Documents/GitHub/chess-boot-using-Minmax--Algorithm/cmake-build-debug/CMakeFiles/chess_boot_using_Minmax__Algorithm.dir
+C:/Users/Meclotfi/Documents/GitHub/chess-boot-using-Minmax--Algorithm/cmake-build-debug/CMakeFiles/edit_cache.dir

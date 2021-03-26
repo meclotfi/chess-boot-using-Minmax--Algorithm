@@ -21,12 +21,12 @@
 #define INFINI INT_MAX
 
 //valeur material des pieces
-#define VAL_P 100
-#define VAL_C 310
-#define VAL_F 320
-#define VAL_T 500
-#define VALUE_Q 900
-#define VALUE_K 10000
+#define VAL_P 10
+#define VAL_C 31
+#define VAL_F 32
+#define VAL_T 50
+#define VAL_Q 90
+#define VAL_K 1000
 
 /* * * * * * * * * * * * *
  * table de score des pieces/carée
@@ -211,7 +211,7 @@ int estim( struct config conf )
 // ********************************************************
 
 	int i, j, ScrQte;
-	int pionB = 0, pionN = 0,cB=0,cN=0, cfB = 0, cfN = 0, tB = 0, tN = 0, nB = 0, nN = 0;
+	int pionB = 0, pionN = 0, rB=0 , rN=0 ,cB=0 , cN=0, cfB = 0, cfN = 0, tB = 0, tN = 0, nB = 0, nN = 0;
 	
 
 	// parties : nombre de pièces et occupation du centre
@@ -220,98 +220,30 @@ int estim( struct config conf )
 
 		switch (conf.mat[i][j]) {
             //valeur par position + valeur material de piece
-		   case 'p' : pionB+=pst_pawn[i];   break;
-		   case 'c' : cB+= pst_knight[i];break;
-		   case 'f' : cfB+=pst_bishop[i];  break;
-		   case 't' : tB+= pst_rook[i]; break;
-		   case 'n' : nB+=pst_king[i];  break;
+		   case 'p' : pionB+=pst_pawn[i]+VAL_P;   break;
+		   case 'c' : cB+= pst_knight[i]+VAL_C;break;
+		   case 'f' : cfB+=pst_bishop[i]+VAL_F;  break;
+		   case 't' : tB+= pst_rook[i]+VAL_T; break;
+		   case 'r' : rB+=pst_king[i]+VAL_K;  break;
+		   case 'n' : nB+=VAL_Q;  break;
 
-		   case -'p' : pionN+=pst_pawn[flip[i]];  break;
-		   case -'c' : cN=pst_knight[flip[i]] break;
-		   case -'f' : cfN+=pst_bishop[flip[i]];  break;
-		   case -'t' : tN+= pst_rook[flip[i]];; break;
-		   case -'n' : nN+=pst_king[flip[i]];  break;
+		   case -'p' : pionN+=pst_pawn[flip[i]]+VAL_P;  break;
+		   case -'c' : cN=pst_knight[flip[i]]+VAL_C; break;
+		   case -'f' : cfN+=pst_bishop[flip[i]]+VAL_F;  break;
+		   case -'t' : tN+= pst_rook[flip[i]]+VAL_T; break;
+		   case -'r' : rN+=pst_king[flip[i]]+=VAL_K;  break;
+		   case -'n' : nB+=VAL_Q;  break;
 		}
 	   }
 
 	// Somme pondérée de pièces de chaque joueur. 
-	// Le facteur 1.4 pour ne pas sortir de l'intervalle ]-100 , +100[
-	ScrQte = ( (pionB + cfB + tB + nB) - (pionN + cfN + tN + nN) ) * 1.4;
 
-	if (ScrQte > 95) ScrQte = 95;		// pour rétrécir l'intervalle à
-	if (ScrQte < -95) ScrQte = -95;		// ]-95 , +95[ car ce n'est qu'une estimation
+	int Score = 0;
+	Score = ( (pionB + cfB + tB + nB+cB+rB) - (pionN + cN + cfN + tN + nN + rN) ) * 0.0000001;
+	if(Score>100) Score=100;
+	if(Score<-100) Score=-100;
 
-	return ScrQte;
-    count_evaluations++;
-
-    /* A counter for the board squares */
-    int i;
-
-    /* The score of the position */
-    int score = 0;
-
-    /* Check all the squares searching for the pieces */
-    for (i = 0; i < 64; i++)
-    {
-        if (color[i] == WHITE)
-        {
-            /* In the current square, add the material
-             * value of the piece */
-            score += value_piece[piece[i]];
-
-            /* Now we add to the evaluation the value of the
-             * piece square tables */
-            switch (piece[i])
-            {
-                case PAWN:
-                    score += pst_pawn[i];
-                    break;
-                case KNIGHT:
-                    score += pst_knight[i];
-                    break;
-                case BISHOP:
-                    score += pst_bishop[i];
-                    break;
-                case ROOK:
-                    score += pst_rook[i];
-                    break;
-                case KING:
-                    score += pst_king[i];
-                    break;
-            }
-        }
-            /* Now the evaluation for black: note the change of
-               the sign in the score */
-        else if (color[i] == BLACK)
-        {
-            score -= value_piece[piece[i]];
-
-            switch (piece[i])
-            {
-                case PAWN:
-                    score -= pst_pawn[flip[i]];
-                    break;
-                case KNIGHT:
-                    score -= pst_knight[flip[i]];
-                    break;
-                case BISHOP:
-                    score -= pst_bishop[flip[i]];
-                    break;
-                case ROOK:
-                    score -= pst_rook[flip[i]];
-                    break;
-                case KING:
-                    score -= pst_king[flip[i]];
-                    break;
-            }
-        }
-    }
-
-    /* Finally we return the score, taking into account the side to move */
-    if (side == WHITE)
-        return score;
-    return -score;
-
+	return Score;
 } // estim
 
 
@@ -1081,10 +1013,11 @@ int main( int argc, char *argv[] )
 	    	for (i=0; i<n; i++) {
 		   cout = minmax_ab( T[i], MAX, hauteur, -INFINI, +INFINI );
 		   if ( cout < score ) {  // Choisir le meilleur coup (c-a-d le plus petit score)
-		   	score = cout;
-		   	j = i;
-		   }
+               score = cout;
+               j = i;
+           }
 	    	}
+	    	printf("le score de ce tour est %d \n",score);
 	    	if ( j != -1 ) { // jouer le coup et aller à la prochaine itération ...
 	    	   copier( &T[j], &conf );
 		   conf.val = score;

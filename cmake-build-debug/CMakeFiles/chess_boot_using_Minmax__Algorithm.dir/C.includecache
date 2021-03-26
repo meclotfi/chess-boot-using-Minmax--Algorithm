@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Meclotfi/Documents/GitHub/chess-boot-using-Minmax--Algorithm/main.c
+stdio.h
+-
+stdlib.h
+-
+limits.h
+-
+
