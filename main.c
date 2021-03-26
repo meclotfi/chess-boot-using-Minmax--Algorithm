@@ -21,12 +21,12 @@
 #define INFINI INT_MAX
 
 //valeur material des pieces
-#define VAL_P 10
-#define VAL_C 31
-#define VAL_F 32
-#define VAL_T 50
-#define VAL_Q 90
-#define VAL_K 1000
+#define VAL_P 1
+#define VAL_C 3
+#define VAL_F 3
+#define VAL_T 5
+#define VAL_Q 9
+#define VAL_K 100
 
 /* * * * * * * * * * * * *
  * table de score des pieces/carée
@@ -239,7 +239,7 @@ int estim( struct config conf )
 	// Somme pondérée de pièces de chaque joueur. 
 
 	int Score = 0;
-	Score = ( (pionB + cfB + tB + nB+cB+rB) - (pionN + cN + cfN + tN + nN + rN) ) * 0.0000001;
+	Score = ( (pionB + cfB + tB + nB+cB+rB) - (pionN + cN + cfN + tN + nN + rN) ) * 0.000001;
 	if(Score>100) Score=100;
 	if(Score<-100) Score=-100;
 
