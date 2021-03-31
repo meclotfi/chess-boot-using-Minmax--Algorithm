@@ -21,8 +21,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a0a4e64-b769-4467-9395-5e63c03369aa" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess_boot_using_Minmax__Algorithm.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess_boot_using_Minmax__Algorithm.dir/main.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess_boot_using_Minmax__Algorithm.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess_boot_using_Minmax__Algorithm.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/chess_boot_using_Minmax__Algorithm.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/chess_boot_using_Minmax__Algorithm.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
@@ -48,11 +51,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="chess_boot_using_Minmax__Algorithm" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="chess_boot_using_Minmax__Algorithm" TARGET_NAME="chess_boot_using_Minmax__Algorithm" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="chess_boot_using_Minmax__Algorithm" RUN_TARGET_NAME="chess_boot_using_Minmax__Algorithm">
@@ -74,7 +78,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616752197110</updated>
-      <workItem from="1616752202736" duration="2023000" />
+      <workItem from="1616752202736" duration="5556000" />
+      <workItem from="1617217155031" duration="2294000" />
     </task>
     <servers />
   </component>
@@ -91,23 +96,44 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1616754232621">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1617218889892">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616754232621" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1616754232621">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617218889892" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1617218889891">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1616754232621" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1616754232621">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1617218889891" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1617218889891">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1616754232621" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1616754232621">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1617218889891" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1617218889892">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1616754232621" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1617218889892" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1617217952903">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617217952903" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1617217952903">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1617217952903" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1617217952903">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1617217952903" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1617217952903">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1617217952903" />
+    <state x="431" y="145" key="search.everywhere.popup" timestamp="1617218210095">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1617218210095" />
   </component>
 </project>

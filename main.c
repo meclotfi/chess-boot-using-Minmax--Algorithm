@@ -26,8 +26,8 @@
 #define VAL_F 3
 #define VAL_T 5
 #define VAL_Q 9
-#define VAL_K 100
-
+#define VAL_K 0
+#define MAX_VAL 21
 /* * * * * * * * * * * * *
  * table de score des pieces/carée
  * * * * * * * * * * * * */
@@ -212,7 +212,7 @@ int estim( struct config conf )
 
 	int i, j, ScrQte;
 	int pionB = 0, pionN = 0, rB=0 , rN=0 ,cB=0 , cN=0, cfB = 0, cfN = 0, tB = 0, tN = 0, nB = 0, nN = 0;
-	
+	int max_pos=15*8;
 
 	// parties : nombre de pièces et occupation du centre
 	for (i=0; i<8; i++)
@@ -232,14 +232,16 @@ int estim( struct config conf )
 		   case -'f' : cfN+=pst_bishop[flip[i]]+VAL_F;  break;
 		   case -'t' : tN+= pst_rook[flip[i]]+VAL_T; break;
 		   case -'r' : rN+=pst_king[flip[i]]+=VAL_K;  break;
-		   case -'n' : nB+=VAL_Q;  break;
+		   case -'n' : nN+=VAL_Q;  break;
 		}
 	   }
 
 	// Somme pondérée de pièces de chaque joueur. 
 
 	int Score = 0;
-	Score = ( (pionB + cfB + tB + nB+cB+rB) - (pionN + cN + cfN + tN + nN + rN) ) * 0.000001;
+
+	float sc = ( (pionB + cfB + tB + nB+cB+rB) - (pionN + cN + cfN + tN + nN + rN) )*100/(MAX_VAL+max_pos) ;
+	Score=sc;
 	if(Score>100) Score=100;
 	if(Score<-100) Score=-100;
 
